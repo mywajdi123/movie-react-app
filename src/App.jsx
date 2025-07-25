@@ -5,7 +5,10 @@ import MovieCard from './components/MovieCard.jsx'
 import { useDebounce } from 'react-use'
 import { getTrendingMovies, updateSearchCount } from './appwrite.js'
 
-const API_BASE_URL = 'https://api.themoviedb.org/3/discover/movie';
+// Fixed API endpoints
+const API_BASE_URL = 'https://api.themoviedb.org/3';
+const DISCOVER_ENDPOINT = `${API_BASE_URL}/discover/movie`;
+const SEARCH_ENDPOINT = `${API_BASE_URL}/search/movie`;
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
@@ -36,32 +39,44 @@ const App = () => {
     setErrorMessage('');
 
     try {
+      // Fixed: Use correct endpoints for search vs discover
       const endpoint = query
-        ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
-        : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
+        ? `${SEARCH_ENDPOINT}?query=${encodeURIComponent(query)}`
+        : `${DISCOVER_ENDPOINT}?sort_by=popularity.desc`;
+
+      console.log('Fetching from:', endpoint); // Debug log
 
       const response = await fetch(endpoint, API_OPTIONS);
 
       if(!response.ok) {
-        throw new Error('Failed to fetch movies');
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
 
-      if(data.Response === 'False') {
-        setErrorMessage(data.Error || 'Failed to fetch movies');
+      // Fixed: TMDB API structure is different from OMDB
+      // TMDB returns results array, not Response: 'False'
+      if(!data.results) {
+        setErrorMessage('No results found');
         setMovieList([]);
         return;
       }
 
       setMovieList(data.results || []);
 
+      // Update search count for successful searches
       if(query && data.results.length > 0) {
-        await updateSearchCount(query, data.results[0]);
+        try {
+          await updateSearchCount(query, data.results[0]);
+        } catch (error) {
+          console.error('Error updating search count:', error);
+          // Don't break the main flow if this fails
+        }
       }
     } catch (error) {
-      console.error(`Error fetching movies: ${error}`);
+      console.error(`Error fetching movies:`, error);
       setErrorMessage('Error fetching movies. Please try again later.');
+      setMovieList([]);
     } finally {
       setIsLoading(false);
     }
@@ -70,10 +85,11 @@ const App = () => {
   const loadTrendingMovies = async () => {
     try {
       const movies = await getTrendingMovies();
-
-      setTrendingMovies(movies);
+      console.log('Trending movies loaded:', movies); // Debug log
+      setTrendingMovies(movies || []); // Ensure it's always an array
     } catch (error) {
-      console.error(`Error fetching trending movies: ${error}`);
+      console.error(`Error fetching trending movies:`, error);
+      setTrendingMovies([]); // Set empty array on error
     }
   }
 
@@ -83,6 +99,12 @@ const App = () => {
 
   useEffect(() => {
     loadTrendingMovies();
+  }, []);
+
+  // Debug: Log environment variables
+  useEffect(() => {
+    console.log('API Key loaded:', API_KEY ? 'Yes' : 'No');
+    console.log('Project ID:', import.meta.env.VITE_APPWRITE_PROJECT_ID);
   }, []);
 
   return (
@@ -103,9 +125,15 @@ const App = () => {
 
             <ul>
               {trendingMovies.map((movie, index) => (
-                <li key={movie.$id}>
+                <li key={movie.$id || movie.id || index}>
                   <p>{index + 1}</p>
-                  <img src={movie.poster_url} alt={movie.title} />
+                  <img 
+                    src={movie.poster_url || `https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                    alt={movie.title}
+                    onError={(e) => {
+                      e.target.src = '/placeholder-movie.jpg'; // fallback image
+                    }}
+                  />
                 </li>
               ))}
             </ul>
@@ -119,6 +147,8 @@ const App = () => {
             <Spinner />
           ) : errorMessage ? (
             <p className="text-red-500">{errorMessage}</p>
+          ) : movieList.length === 0 ? (
+            <p>No movies found. Try searching for something!</p>
           ) : (
             <ul>
               {movieList.map((movie) => (
