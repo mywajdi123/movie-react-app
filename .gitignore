@@ -1,0 +1,27 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.*  # In case you use .env.development, .env.local, etc.
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS system files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors (optional)
+.vscode/
+.idea/
+
+# Build output (optional)
+dist/
+build/
