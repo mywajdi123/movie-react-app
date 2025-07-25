@@ -75,11 +75,13 @@ http://localhost:5173
 - **Trending Analytics** - Track most searched movies
 - **Click-to-Expand** - Modal-based movie details
 
-### 🎨 **Design Excellence**
-- **Netflix-Inspired Theme** - Professional red & black color scheme
-- **Glassmorphism UI** - Modern blur effects and transparency
-- **Smooth Animations** - Staggered card entrances and hover effects
-- **Responsive Design** - Perfect on desktop, tablet, and mobile
+## 🎪 UI Highlights
+
+- **Glassmorphism Cards** with Netflix red accents
+- **Bebas Neue Typography** for that cinematic feel
+- **Color-Coded Ratings** (Green → Yellow → Orange → Red)
+- **Animated Background** with floating particles
+- **Professional Modal System** with blur overlays
 
 ### 📊 **User Experience**
 ```mermaid
@@ -116,11 +118,3 @@ graph LR
 - **API Efficiency**: Smart caching and debounced requests  
 - **Smooth Animations**: Hardware-accelerated CSS transitions
 - **Mobile Optimized**: Touch-friendly interface design
-
-## 🎪 UI Highlights
-
-- **Glassmorphism Cards** with Netflix red accents
-- **Bebas Neue Typography** for that cinematic feel
-- **Color-Coded Ratings** (Green → Yellow → Orange → Red)
-- **Animated Background** with floating particles
-- **Professional Modal System** with blur overlays
