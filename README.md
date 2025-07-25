@@ -58,15 +58,14 @@ http://localhost:5173
 ## 🏗️ Technology Stack
 
 ### **Frontend**
-- **React 19** - Latest React features
-- **Vite 6.0** - Lightning-fast build tool
-- **Pure CSS** - Custom glassmorphism styling
-- **React-Use** - Utility hooks
+- **React 19**
+- **Pure CSS**
+- **React-Use**
 
 ### **Backend Services**
-- **TMDB API** - Movie data and ratings
-- **Appwrite** - Database and search analytics
-- **Trending System** - Real-time search tracking
+- **TMDB API**
+- **Appwrite**
+- **Trending System**
 
 ## ✨ Key Features
 
@@ -125,7 +124,3 @@ graph LR
 - **Color-Coded Ratings** (Green → Yellow → Orange → Red)
 - **Animated Background** with floating particles
 - **Professional Modal System** with blur overlays
-
----
-
-*Built with modern web technologies and Netflix-inspired design principles for an exceptional movie discovery experience.*
