@@ -10,12 +10,12 @@ const MovieCard = ({
   // Animation delay based on card index for staggered entrance
   const animationDelay = index * 0.1;
 
-  // Format rating with proper color coding
+  // Format rating with proper color coding (Netflix style)
   const getRatingColor = (rating) => {
-    if (rating >= 8) return '#10b981'; // green
-    if (rating >= 7) return '#f59e0b'; // yellow
+    if (rating >= 8) return '#22c55e'; // bright green
+    if (rating >= 7) return '#fbbf24'; // golden yellow
     if (rating >= 6) return '#f97316'; // orange
-    return '#ef4444'; // red
+    return '#e53e3e'; // Netflix red
   };
 
   // Format language display
@@ -199,22 +199,22 @@ const MovieCard = ({
           transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(0, 0, 0, 0.6);
           backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 2px solid rgba(229, 62, 62, 0.15);
           box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            0 8px 32px rgba(0, 0, 0, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .movie-card:hover {
-          background: rgba(255, 255, 255, 0.08);
-          border-color: rgba(99, 102, 241, 0.3);
+          background: rgba(229, 62, 62, 0.08);
+          border-color: rgba(229, 62, 62, 0.4);
           transform: translateY(-8px) scale(1.02);
           box-shadow: 
-            0 20px 50px rgba(0, 0, 0, 0.4),
-            0 0 30px rgba(99, 102, 241, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            0 20px 50px rgba(0, 0, 0, 0.7),
+            0 0 30px rgba(229, 62, 62, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .poster-container {
@@ -245,6 +245,7 @@ const MovieCard = ({
           object-fit: cover;
           transition: all 0.3s ease;
           opacity: 0;
+          border: 1px solid rgba(229, 62, 62, 0.1);
         }
 
         .movie-poster.loaded {
@@ -253,6 +254,7 @@ const MovieCard = ({
 
         .movie-card:hover .movie-poster {
           transform: scale(1.05);
+          border-color: rgba(229, 62, 62, 0.3);
         }
 
         .rating-badge {
@@ -289,7 +291,7 @@ const MovieCard = ({
         }
 
         .click-hint {
-          background: rgba(99, 102, 241, 0.9);
+          background: rgba(229, 62, 62, 0.9);
           padding: 0.5rem 1rem;
           border-radius: 0.5rem;
           backdrop-filter: blur(10px);
@@ -304,7 +306,8 @@ const MovieCard = ({
           font-weight: 700;
           font-size: 1.125rem;
           margin-bottom: 0.75rem;
-          font-family: 'Orbitron', monospace;
+          font-family: 'Bebas Neue', sans-serif;
+          letter-spacing: 0.5px;
           line-height: 1.3;
           display: -webkit-box;
           -webkit-line-clamp: 2;
@@ -321,17 +324,17 @@ const MovieCard = ({
         }
 
         .detail-chip {
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: rgba(0, 0, 0, 0.6);
+          border: 1px solid rgba(229, 62, 62, 0.2);
           padding: 0.25rem 0.75rem;
           border-radius: 1rem;
           font-size: 0.875rem;
-          color: #e5e7eb;
+          color: #cccccc;
           font-weight: 500;
         }
 
         .separator {
-          color: #6b7280;
+          color: #999999;
           font-size: 0.875rem;
         }
 
@@ -354,9 +357,9 @@ const MovieCard = ({
         }
 
         .modal-content {
-          background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+          background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 0, 0, 0.95) 50%, rgba(0, 0, 0, 0.95) 100%);
           backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 2px solid rgba(229, 62, 62, 0.2);
           border-radius: 1.5rem;
           max-width: 4xl;
           width: 100%;
@@ -370,8 +373,8 @@ const MovieCard = ({
           position: absolute;
           top: 1rem;
           right: 1rem;
-          background: rgba(255, 255, 255, 0.1);
-          border: none;
+          background: rgba(0, 0, 0, 0.8);
+          border: 2px solid rgba(229, 62, 62, 0.3);
           color: white;
           width: 2.5rem;
           height: 2.5rem;
@@ -385,7 +388,8 @@ const MovieCard = ({
         }
 
         .close-button:hover {
-          background: rgba(239, 68, 68, 0.8);
+          background: rgba(229, 62, 62, 0.8);
+          border-color: rgba(229, 62, 62, 0.6);
           transform: scale(1.1);
         }
 
@@ -413,9 +417,10 @@ const MovieCard = ({
           font-size: 2rem;
           font-weight: 700;
           color: white;
-          font-family: 'Orbitron', monospace;
+          font-family: 'Bebas Neue', sans-serif;
           margin: 0;
           line-height: 1.2;
+          letter-spacing: 1px;
         }
 
         .modal-meta {
@@ -429,13 +434,13 @@ const MovieCard = ({
           justify-content: space-between;
           align-items: center;
           padding: 0.75rem;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(0, 0, 0, 0.4);
           border-radius: 0.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(229, 62, 62, 0.2);
         }
 
         .meta-label {
-          color: #9ca3af;
+          color: #cccccc;
           font-weight: 500;
         }
 
@@ -449,11 +454,12 @@ const MovieCard = ({
           font-size: 1.25rem;
           font-weight: 600;
           margin-bottom: 0.75rem;
-          font-family: 'Orbitron', monospace;
+          font-family: 'Bebas Neue', sans-serif;
+          letter-spacing: 0.5px;
         }
 
         .modal-description p {
-          color: #d1d5db;
+          color: #e5e5e5;
           line-height: 1.6;
           font-size: 1rem;
         }
@@ -476,24 +482,27 @@ const MovieCard = ({
         }
 
         .favorite-btn {
-          background: rgba(239, 68, 68, 0.2);
-          border: 1px solid rgba(239, 68, 68, 0.3);
-          color: #fca5a5;
+          background: rgba(229, 62, 62, 0.2);
+          border: 1px solid rgba(229, 62, 62, 0.4);
+          color: #ff6b6b;
         }
 
         .favorite-btn:hover {
-          background: rgba(239, 68, 68, 0.3);
+          background: rgba(229, 62, 62, 0.3);
+          border-color: rgba(229, 62, 62, 0.6);
           transform: translateY(-2px);
         }
 
         .watchlist-btn {
-          background: rgba(59, 130, 246, 0.2);
-          border: 1px solid rgba(59, 130, 246, 0.3);
-          color: #93c5fd;
+          background: rgba(0, 0, 0, 0.6);
+          border: 1px solid rgba(229, 62, 62, 0.3);
+          color: #cccccc;
         }
 
         .watchlist-btn:hover {
-          background: rgba(59, 130, 246, 0.3);
+          background: rgba(229, 62, 62, 0.2);
+          border-color: rgba(229, 62, 62, 0.5);
+          color: #ffffff;
           transform: translateY(-2px);
         }
 

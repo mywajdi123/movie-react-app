@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 /* Custom Base Styles */
 * {
@@ -12,10 +12,10 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0000 30%, #000000 100%);
   min-height: 100vh;
   overflow-x: hidden;
-  color: #f8fafc;
+  color: #ffffff;
   margin: 0;
   padding: 0;
 }
@@ -29,14 +29,15 @@ h1 {
   line-height: 1.2;
   letter-spacing: -0.025em;
   color: white;
-  font-family: 'Orbitron', monospace;
-  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #6366f1 100%);
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #ff6b6b 50%, #e53e3e 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient-shift 4s ease infinite;
-  text-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+  text-shadow: 0 0 40px rgba(229, 62, 62, 0.4);
+  letter-spacing: 2px;
 }
 
 @media (min-width: 768px) {
@@ -56,11 +57,12 @@ h2 {
   font-weight: 700;
   color: white;
   margin-bottom: 2rem;
-  font-family: 'Orbitron', monospace;
-  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 100%);
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #ff6b6b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: 1px;
 }
 
 @media (min-width: 768px) {
@@ -72,9 +74,11 @@ h2 {
 main {
   min-height: 100vh;
   position: relative;
-  background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.1) 0%, transparent 70%),
-              radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1) 0%, transparent 70%),
-              linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+  background: 
+    radial-gradient(ellipse at top left, rgba(229, 62, 62, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at center, rgba(153, 27, 27, 0.08) 0%, transparent 70%),
+    linear-gradient(135deg, #000000 0%, #1a0000 50%, #0a0a0a 100%);
 }
 
 /* Animated background */
@@ -86,10 +90,10 @@ main {
   left: 0;
   z-index: 0;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-  animation: float 20s ease-in-out infinite;
+    radial-gradient(circle at 20% 80%, rgba(229, 62, 62, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(153, 27, 27, 0.06) 0%, transparent 50%);
+  animation: float 25s ease-in-out infinite;
 }
 
 .pattern::before {
@@ -97,10 +101,10 @@ main {
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px, 80px 80px;
-  animation: float 15s ease-in-out infinite reverse;
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(229, 62, 62, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px, 100px 100px;
+  animation: float 20s ease-in-out infinite reverse;
 }
 
 .wrapper {
@@ -134,7 +138,7 @@ header img {
   object-fit: contain;
   margin: 0 auto 2rem;
   display: block;
-  filter: drop-shadow(0 10px 30px rgba(99, 102, 241, 0.3));
+  filter: drop-shadow(0 10px 30px rgba(229, 62, 62, 0.3));
   animation: float 6s ease-in-out infinite;
 }
 
@@ -153,22 +157,22 @@ header img {
   padding: 1rem 1.5rem;
   border-radius: 1.5rem;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(229, 62, 62, 0.2);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .search > div:hover,
 .search > div:focus-within {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(229, 62, 62, 0.08);
+  border-color: rgba(229, 62, 62, 0.5);
   box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(99, 102, 241, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 12px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(229, 62, 62, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
@@ -192,7 +196,7 @@ header img {
 }
 
 .search input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Trending */
@@ -223,34 +227,34 @@ header img {
   padding: 1.25rem;
   border-radius: 1.5rem;
   transition: all 0.5s ease;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(229, 62, 62, 0.15);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .trending ul li:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(229, 62, 62, 0.08);
+  border-color: rgba(229, 62, 62, 0.4);
   transform: translateY(-8px) scale(1.02);
   box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(99, 102, 241, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(229, 62, 62, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .trending ul li p {
   font-size: 6rem;
   font-weight: 900;
   margin-right: 1rem;
-  font-family: 'Orbitron', monospace;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(99, 102, 241, 0.8) 100%);
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(229, 62, 62, 0.9) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  text-shadow: 0 0 20px rgba(229, 62, 62, 0.6);
   line-height: 1;
 }
 
@@ -260,12 +264,14 @@ header img {
   border-radius: 1rem;
   object-fit: cover;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(229, 62, 62, 0.2);
 }
 
 .trending ul li:hover img {
   transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+  border-color: rgba(229, 62, 62, 0.4);
 }
 
 /* Movies Grid */
@@ -302,15 +308,16 @@ header img {
 .movie-card {
   padding: 1.5rem;
   border-radius: 1.5rem;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(229, 62, 62, 0.15);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  cursor: pointer;
 }
 
 .movie-card::before {
@@ -319,7 +326,7 @@ header img {
   inset: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(229, 62, 62, 0.08) 0%, rgba(220, 38, 38, 0.05) 100%);
   pointer-events: none;
 }
 
@@ -328,13 +335,13 @@ header img {
 }
 
 .movie-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(99, 102, 241, 0.3);
-  transform: translateY(-12px) scale(1.03);
+  background: rgba(229, 62, 62, 0.08);
+  border-color: rgba(229, 62, 62, 0.4);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: 
-    0 25px 60px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(99, 102, 241, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 20px 50px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(229, 62, 62, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .movie-card img {
@@ -344,12 +351,14 @@ header img {
   object-fit: cover;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(229, 62, 62, 0.1);
 }
 
 .movie-card:hover img {
   transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+  border-color: rgba(229, 62, 62, 0.3);
 }
 
 .movie-card h3 {
@@ -357,9 +366,9 @@ header img {
   font-weight: 700;
   font-size: 1.125rem;
   margin-bottom: 1rem;
-  font-family: 'Orbitron', monospace;
-  letter-spacing: -0.02em;
-  line-height: 1.4;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 
 .movie-card .content {
@@ -392,12 +401,12 @@ header img {
 
 .movie-card .content span {
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: #999999;
 }
 
 .movie-card .content .lang,
 .movie-card .content .year {
-  color: #d1d5db;
+  color: #cccccc;
   font-weight: 500;
   font-size: 1rem;
   text-transform: capitalize;
@@ -414,28 +423,28 @@ header img {
 .error-message {
   text-align: center;
   padding: 5rem 0;
-  color: #f87171;
+  color: #ff6b6b;
   font-size: 1.125rem;
   border-radius: 1rem;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  background: rgba(229, 62, 62, 0.1);
+  border: 2px solid rgba(229, 62, 62, 0.3);
   backdrop-filter: blur(10px);
 }
 
 .no-results {
   text-align: center;
   padding: 5rem 0;
-  color: #9ca3af;
+  color: #cccccc;
   font-size: 1.125rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(229, 62, 62, 0.2);
   backdrop-filter: blur(10px);
 }
 
 /* Utility Classes */
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #6366f1 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ff6b6b 50%, #e53e3e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -444,8 +453,8 @@ header img {
 /* Custom Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-10px) rotate(1deg); }
-  66% { transform: translateY(5px) rotate(-1deg); }
+  33% { transform: translateY(-10px) rotate(0.5deg); }
+  66% { transform: translateY(5px) rotate(-0.5deg); }
 }
 
 @keyframes slideInUp {
