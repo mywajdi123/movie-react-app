@@ -10,7 +10,7 @@ A modern, Netflix-inspired movie discovery application built with React, featuri
 ![Vite](https://img.shields.io/badge/Vite-6.0+-purple)
 ![TMDB](https://img.shields.io/badge/TMDB-API%20Powered-orange)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 ```bash
@@ -55,7 +55,7 @@ npm run dev
 http://localhost:5173
 ```
 
-## 🏗️ Technology Stack
+## Technology Stack
 
 ### **Frontend**
 - **React 19**
@@ -67,15 +67,15 @@ http://localhost:5173
 - **Appwrite**
 - **Trending System**
 
-## ✨ Key Features
+## Key Features
 
-### 🎯 **Core Functionality**
+### **Core Functionality**
 - **Real-Time Search** - Debounced search with instant results
 - **Movie Discovery** - Browse popular movies with detailed information
 - **Trending Analytics** - Track most searched movies
 - **Click-to-Expand** - Modal-based movie details
 
-## 🎪 UI Highlights
+## UI Highlights
 
 - **Glassmorphism Cards** with Netflix red accents
 - **Bebas Neue Typography** for that cinematic feel
@@ -83,7 +83,7 @@ http://localhost:5173
 - **Animated Background** with floating particles
 - **Professional Modal System** with blur overlays
 
-### 📊 **User Experience**
+### **User Experience**
 ```mermaid
 graph LR
     A[User Search] --> B[Debounced Query]
@@ -95,7 +95,7 @@ graph LR
     G --> H[Update Trending]
 ```
 
-## 🔧 How It Works
+## How It Works
 
 ### 1. **Movie Search Pipeline**
 - **Debounced Input**: 500ms delay prevents excessive API calls
@@ -112,7 +112,7 @@ graph LR
 - **Hover Effects**: Subtle animations and visual feedback
 - **Modal System**: Detailed movie information without page navigation
 
-## 📈 Performance Features
+## Performance Features
 
 - **Image Optimization**: Lazy loading and error handling
 - **API Efficiency**: Smart caching and debounced requests  
