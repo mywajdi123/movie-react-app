@@ -1,6 +1,6 @@
-# 🎬 CineScope - Netflix-Style Movie Discovery Platform
+# 🎬 CineScope - Netflix Style Movie Discovery Platform
 
-A modern, Netflix-inspired movie discovery application built with React, featuring glassmorphism design, real-time search, and trending analytics powered by TMDB API and Appwrite.
+A modern, Netflix inspired movie discovery application built with React, featuring glassmorphism design, real time search, and trending analytics powered by TMDB API and Appwrite.
 
 <img width="964" height="818" alt="movie-app-example" src="https://github.com/user-attachments/assets/4a46e4ff-f9ef-4e6f-804c-5f8f0910ff02" />
 
